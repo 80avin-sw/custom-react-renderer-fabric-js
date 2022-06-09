@@ -1,16 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { FabricCanvas } from "./renderers/canvas";
 import "./App.css";
 import { Musical } from "./renderers/musical";
 
+const lyrics = [
+  "AGFG|AAA2|GGG2|AAA2|AGFG|AAAA|GGAG|F4|z4",
+  "F^Gcf|[gE]c^G|g[^g^D]c|^G^g[dD]|" +
+           "^AFd|[^C=c]^GF|^G21/3c^GF|[G^DG,][F,F^G][^GFF,]2z4",
+]
 function App() {
+  const [idx_2, setIdx2] = useState(0)
+  const cb = useCallback(() => {
+    setIdx2(i => (i+1)%2)
+  }, [])
   return (
     <div className="App">
+      <button onClick={cb}>Change {idx_2}</button>
       <Musical>
         <timbre wave="piano" />
         <lyrics text="AGFG|AAA2|GGG2|AAA2|AGFG|AAAA|GGAG|F4|z4" />
-        <delay duration={1500} />
-        <lyrics text="AGFG|AAA2|GGG2|AAA2|AGFG|AAAA|GGAG|F4|z4" />
+        <delay duration={500} />
+        <lyrics text={lyrics[idx_2]} />
         <parallelSong>
           <seqSong>
             <delay duration={1000} />
