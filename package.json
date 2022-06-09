@@ -9,6 +9,7 @@
     "deep-object-diff": "^1.1.7",
     "fabric": "^5.2.1",
     "lodash": "^4.17.21",
+    "musical.js": "https://github.com/80avin-sw/musical.js.git",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-reconciler": "0.28.0",
