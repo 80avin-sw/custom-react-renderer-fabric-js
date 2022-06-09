@@ -16,7 +16,7 @@ const musicalDoc = new MusicalDoc()
 export function createInstance(type, props, rootContainer) {
   const children = props.children
   props = omit(props,'children')
-  const host = new Elements[type](props, children)
+  const host = new Elements[type](props, null)
   // const host = new fabric[toPascalCase(type)](props)
   // const eventProps = getEventProps(props)
   // if (!isEmpty(eventProps)) {

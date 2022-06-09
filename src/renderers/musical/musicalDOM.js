@@ -95,7 +95,8 @@ class Delay extends BasicElement {
     const promise = new Promise(r => {
       setTimeout(r, this.props.duration)
     })
-    return promise
+    await promise
+    this.dispatchEvent(new Event('done'))
     return instrument
   }
 }
@@ -104,7 +105,7 @@ class Timbre extends BasicElement {
   static type = 'timbre'
   async run(instrument){
     instrument.setTimbre({
-      ...this.instrument._timbre,
+      ...this.instrument?._timbre,
       ...this.props
     })
     this.dispatchEvent(new Event('done'))
@@ -144,10 +145,10 @@ class SeqSong extends BasicElement {
    * 
    * @param {BasicElement} child 
    */
-  appendChild(child){
-    this.children.push(child)
-    child.instrument = this.instrument
-  }
+  // appendChild(child){
+  //   this.children.push(child)
+  //   // child.instrument = this.instrument
+  // }
 }
 
 class ParallelSong extends BasicElement {
@@ -161,10 +162,10 @@ class ParallelSong extends BasicElement {
    * 
    * @param {BasicElement} child 
    */
-  appendChild(child){
-    this.children.push(child)
-    // child.instrument = new Instrument(this.instrument._timbre)
-  }
+  // appendChild(child){
+  //   this.children.push(child)
+  //   // child.instrument = new Instrument(this.instrument._timbre)
+  // }
 }
 
 export const Elements = {
@@ -188,6 +189,7 @@ export default class MusicalDoc extends BasicElement {
   createInstance(type, props){
     const el = new Elements[type](omit(props, 'children', this.inst))
     // el.init()
+
   }
   async run(){
     let instrument = new Instrument(this.inst.getTimbre())

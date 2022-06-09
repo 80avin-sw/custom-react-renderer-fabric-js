@@ -18,8 +18,6 @@ export function createInstance(type, props, rootContainer) {
         host.on(eventName, eventProps[eventName]);
     })
   }
-
-
   return { type, host, canvas: rootContainer }
 }
 
