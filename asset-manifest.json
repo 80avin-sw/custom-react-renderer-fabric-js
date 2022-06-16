@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/custom-react-renderer-fabric-js/static/css/main.073c9b0a.css",
+    "main.js": "/custom-react-renderer-fabric-js/static/js/main.34e29d95.js",
+    "static/js/787.3bdd3c3d.chunk.js": "/custom-react-renderer-fabric-js/static/js/787.3bdd3c3d.chunk.js",
+    "index.html": "/custom-react-renderer-fabric-js/index.html",
+    "main.073c9b0a.css.map": "/custom-react-renderer-fabric-js/static/css/main.073c9b0a.css.map",
+    "main.34e29d95.js.map": "/custom-react-renderer-fabric-js/static/js/main.34e29d95.js.map",
+    "787.3bdd3c3d.chunk.js.map": "/custom-react-renderer-fabric-js/static/js/787.3bdd3c3d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.34e29d95.js"
+  ]
+}
